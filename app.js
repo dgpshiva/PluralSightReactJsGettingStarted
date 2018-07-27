@@ -1,15 +1,13 @@
 class Button extends React.Component {
 
-    // handleClick = () => {
-    //   this.setState ((prevState) => ({
-    //       counter: prevState.counter + 1
-    //     }));
-    // };
+    handleClick = () => {
+       this.props.onClickFunction(this.props.incrementValue);
+    };
 
     render() {
       return (
         <button
-            onClick={()=>this.props.onClickFunction(this.props.incrementValue)}>
+            onClick={this.handleClick}>
           +{this.props.incrementValue}
         </button>
       );
